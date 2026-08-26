@@ -1,0 +1,32 @@
+{
+  "name": "unsent-email-dungeon",
+  "version": "1.0.0",
+  "description": "A solo terminal roguelike where unfinished email drafts mutate into monsters inside inbox rooms.",
+  "private": true,
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx src/index.ts",
+    "run": "tsx src/index.ts",
+    "dev": "tsx watch src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck"
+  },
+  "keywords": [
+    "roguelike",
+    "terminal",
+    "typescript",
+    "email",
+    "dungeon"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  }
+}
