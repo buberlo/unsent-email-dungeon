@@ -55,4 +55,20 @@ export function pick<T>(items: readonly T[]): T {
   return items[randInt(0, items.length - 1)] as T;
 }
 
-/** Picks a random subset of items
+/** Picks a random subset of items without replacement. */
+export function pickSubset<T>(items: readonly T[], count: number): T[] {
+  if (count < 0) {
+    throw new Error('pickSubset: count must be >= 0');
+  }
+
+  const pool = items.slice();
+  const result: T[] = [];
+  const target = Math.min(count, pool.length);
+
+  for (let i = 0; i < target; i++) {
+    const index = randInt(0, pool.length - 1);
+    result.push(pool.splice(index, 1)[0] as T);
+  }
+
+  return result;
+}
